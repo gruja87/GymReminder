@@ -1,10 +1,12 @@
 package com.example.android.gymreminder.activities;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.gymreminder.R;
@@ -34,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mPager);
         if (mTabLayout.getTabCount() == 3) {
             mTabLayout.getTabAt(0).setCustomView(R.layout.tabs);
-            ((TextView) mTabLayout.getTabAt(0).getCustomView().findViewById(R.id.tvText)).setText("A");
+            ((TextView) mTabLayout.getTabAt(0).getCustomView().findViewById(R.id.tvText)).setText("Fragment A");
+            ((ImageView) mTabLayout.getTabAt(0).getCustomView().findViewById(R.id.ivIcon)).setImageResource(R.drawable.fragment_a);
             mTabLayout.getTabAt(1).setCustomView(R.layout.tabs);
-            ((TextView) mTabLayout.getTabAt(1).getCustomView().findViewById(R.id.tvText)).setText("B");
+            ((TextView) mTabLayout.getTabAt(1).getCustomView().findViewById(R.id.tvText)).setText("Fragment B");
+            ((ImageView) mTabLayout.getTabAt(1).getCustomView().findViewById(R.id.ivIcon)).setImageResource(R.drawable.fragment_b);
             mTabLayout.getTabAt(2).setCustomView(R.layout.tabs);
-            ((TextView) mTabLayout.getTabAt(2).getCustomView().findViewById(R.id.tvText)).setText("C");
+            ((TextView) mTabLayout.getTabAt(2).getCustomView().findViewById(R.id.tvText)).setText("Fragment C");
+            ((ImageView) mTabLayout.getTabAt(2).getCustomView().findViewById(R.id.ivIcon)).setImageResource(R.drawable.fragment_c);
         }
 
         mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
