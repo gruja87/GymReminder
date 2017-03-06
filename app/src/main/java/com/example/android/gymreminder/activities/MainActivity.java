@@ -25,18 +25,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mActionBar = getSupportActionBar();
-        mActionBar.setTitle("Fragment A");
+        if (mActionBar != null) {
+            mActionBar.setTitle("Fragment A");
+        }
 
         initComponents();
         setupViewPager(mPager);
         mTabLayout.setupWithViewPager(mPager);
-        if (mTabLayout.getTabCount()==3){
+        if (mTabLayout.getTabCount() == 3) {
             mTabLayout.getTabAt(0).setCustomView(R.layout.tabs);
-            ((TextView)mTabLayout.getTabAt(0).getCustomView().findViewById(R.id.tvText)).setText("A");
+            ((TextView) mTabLayout.getTabAt(0).getCustomView().findViewById(R.id.tvText)).setText("A");
             mTabLayout.getTabAt(1).setCustomView(R.layout.tabs);
-            ((TextView)mTabLayout.getTabAt(1).getCustomView().findViewById(R.id.tvText)).setText("B");
+            ((TextView) mTabLayout.getTabAt(1).getCustomView().findViewById(R.id.tvText)).setText("B");
             mTabLayout.getTabAt(2).setCustomView(R.layout.tabs);
-            ((TextView)mTabLayout.getTabAt(2).getCustomView().findViewById(R.id.tvText)).setText("C");
+            ((TextView) mTabLayout.getTabAt(2).getCustomView().findViewById(R.id.tvText)).setText("C");
         }
 
         mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         mActionBar.setTitle("Fragment A");
                         break;
