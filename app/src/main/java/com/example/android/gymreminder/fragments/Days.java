@@ -13,14 +13,14 @@ import com.example.android.gymreminder.R;
  * Created by User on 06/03/2017.
  */
 
-public class FragmentB extends Fragment {
+public class Days extends Fragment {
 
     private View mRootView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_b,container,false);
+        mRootView = inflater.inflate(R.layout.fragment_c,container,false);
         return mRootView;
     }
 }
